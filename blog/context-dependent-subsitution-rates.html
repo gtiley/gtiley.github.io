@@ -102,7 +102,7 @@
 					</li>
 					
 					<li class="menu__list__item">
-						<a href="/about" class="menu__list__item__link">About</a>
+						<a href="/madgrass" class="menu__list__item__link">MADGRASS</a>
 					</li>
 					
 					<li class="menu__list__item">
@@ -111,6 +111,10 @@
 					
 					<li class="menu__list__item">
 						<a href="/software" class="menu__list__item__link">Software</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/teaching" class="menu__list__item__link">Teaching</a>
 					</li>
 					
 					<li class="menu__list__item">
@@ -201,7 +205,7 @@
 	<div class="wrap">
 
 		<h1>Context-Dependent Substitution Rates</h1>
-		<p>04 July 2020</p>
+		<p>05 July 2020</p>
 
 	</div>
 
@@ -216,13 +220,13 @@
 
 <p>This was an area of research that I did not fully appreciate until our mouse lemur mutation rate project. A long legacy of mutation accumulation experiments and model organisms and more recent pedigree-based mutation rate studies have established that some types of mutations are more frequent than others.<br />
 For example, C-&gt;T transitions at CpG sites are largely due to deamination of methylated cytosines at CpG sites. If you could separate C-&gt;T transitions into those with a Guanine at their 5’ end versus those with anything except Guanine, you would probably find those at CpG sites outnumber all of the others. Thus, the “context” of the mutations is important and explains a lot of rate variation.<br />
-Molecular clock models are not only useful for estimating divergence times, but can be used to understand the <em>evolution of the rate of evolution</em> <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> among species. Standard phylogenetic clock models allow one to assign different sequences to difference partitions, which jointly estimates divergence times shared by all partitions as well as the evolutionary rate of each partition. Relaxed-clock models further allow a different rate for each branch in the species tree for each partition. This provides the necessary tools to lineage-specific variation in substitution rates across partitions.<br />
-Coincident with early genomes and when long, contiguous sequences from BAC chromosomes could be compared across several species, a number of studies proposed different solutions for estimating context dependent substitution rates on a phylogeny in the early 2000s. The ML density for a Markov model that treats n-tuples (such as dinucleotides or trinucleotides) as independent rate classes as well as the extensions to the pruning algorithm to estimate the ML was derived in 2004 <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>. As with many things in molecular evolution, Bayesian MCMC approaches can get around some of the computational difficulty and approximation needed for ML solutions. The foundation for the analyses done here are from Hwang and Green (2004) <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>, where they estimated 96 different rate parameters assuming the complementary substituion types have the same rate (<em>wxy</em> -&gt; <em>wzy</em>); the rate of <em>x</em> -&gt; <em>z</em> depended on the flanking bases <em>w</em> <strong>and</strong> <em>x</em>. The authors were able to identify groups of parameters with similar rate estimates and importantly recognized that CpG -&gt; TpG were more clock-like than any other substitution type, regardless of which base was on the 3’ side of the C. The clock like behavior of CpG -&gt; TpG substitutions was tested in primates by Kim et al. (2006) <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> and later by Moorjani et al. (2016) <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> with additional implications for the importance of generation time for explaining relative substitution rates for other substitution types.<br />
-Important developments happend between 2004 and now. Specifically, there was the CAT model and Phylobayes <sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>, which uses mixtures of substitution models to account for among-site rate variation in a flexible way. An output of this Bayesian model is that one can generate a sample of stochastic character mappings for each site to estimate rates of evolution while considering uncertainty in the evolutionary history of each site (i.e. a CpG site was not always a CpG site after all). Lee et al. (2015) <sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup> used these stochastic character mappings to estimate the expected numbers of context-dependent substitutions and ultimately the <strong>substitution lengths</strong>. The substitution length estimates for each context-dependent substitution type can be used to estimate <em>rates</em> of evolution for each context-dependent substitution type under a relaxed clock with multidivtim <sup id="fnref:1:1"><a href="#fn:1" class="footnote">1</a></sup>.<br /></p>
+Molecular clock models are not only useful for estimating divergence times, but can be used to understand the <em>evolution of the rate of evolution</em> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> among species. Standard phylogenetic clock models allow one to assign different sequences to difference partitions, which jointly estimates divergence times shared by all partitions as well as the evolutionary rate of each partition. Relaxed-clock models further allow a different rate for each branch in the species tree for each partition. This provides the necessary tools to lineage-specific variation in substitution rates across partitions.<br />
+Coincident with early genomes and when long, contiguous sequences from BAC chromosomes could be compared across several species, a number of studies proposed different solutions for estimating context dependent substitution rates on a phylogeny in the early 2000s. The ML density for a Markov model that treats n-tuples (such as dinucleotides or trinucleotides) as independent rate classes as well as the extensions to the pruning algorithm to estimate the ML was derived in 2004 <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. As with many things in molecular evolution, Bayesian MCMC approaches can get around some of the computational difficulty and approximation needed for ML solutions. The foundation for the analyses done here are from Hwang and Green (2004) <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>, where they estimated 96 different rate parameters assuming the complementary substituion types have the same rate (<em>wxy</em> -&gt; <em>wzy</em>); the rate of <em>x</em> -&gt; <em>z</em> depended on the flanking bases <em>w</em> <strong>and</strong> <em>x</em>. The authors were able to identify groups of parameters with similar rate estimates and importantly recognized that CpG -&gt; TpG were more clock-like than any other substitution type, regardless of which base was on the 3’ side of the C. The clock like behavior of CpG -&gt; TpG substitutions was tested in primates by Kim et al. (2006) <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> and later by Moorjani et al. (2016) <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> with additional implications for the importance of generation time for explaining relative substitution rates for other substitution types.<br />
+Important developments happend between 2004 and now. Specifically, there was the CAT model and Phylobayes <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>, which uses mixtures of substitution models to account for among-site rate variation in a flexible way. An output of this Bayesian model is that one can generate a sample of stochastic character mappings for each site to estimate rates of evolution while considering uncertainty in the evolutionary history of each site (i.e. a CpG site was not always a CpG site after all). Lee et al. (2015) <sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup> used these stochastic character mappings to estimate the expected numbers of context-dependent substitutions and ultimately the <strong>substitution lengths</strong>. The substitution length estimates for each context-dependent substitution type can be used to estimate <em>rates</em> of evolution for each context-dependent substitution type under a relaxed clock with multidivtim <sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.<br /></p>
 
 <h3 id="analyzing-some-primate-data">Analyzing some primate data</h3>
 
-<p>Primates have been analyzed before, but because of the typical sampling biases pervasive in research, all strepsirrhines were excluded except as outgroups. Analyzing context-dependent substitution rates seemed like an interesting idea, because the mouse lemur mutational spectrum was … odd <sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>. Or rather unexpected compared to Anthropoidea. We actually found more C-&gt;T transitions <strong>not</strong> at CpG sites as opposed to CpG -&gt; TpG transitions (Fig. 1A). The mouse lemur lineage-specific rates across substitution types do not find an elevated CpG -&gt; TpG rate compared to C-&gt;T transitions at non-CpG sites (Fig. 1B).<br /></p>
+<p>Primates have been analyzed before, but because of the typical sampling biases pervasive in research, all strepsirrhines were excluded except as outgroups. Analyzing context-dependent substitution rates seemed like an interesting idea, because the mouse lemur mutational spectrum was … odd <sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>. Or rather unexpected compared to Anthropoidea. We actually found more C-&gt;T transitions <strong>not</strong> at CpG sites as opposed to CpG -&gt; TpG transitions (Fig. 1A). The mouse lemur lineage-specific rates across substitution types do not find an elevated CpG -&gt; TpG rate compared to C-&gt;T transitions at non-CpG sites (Fig. 1B).<br /></p>
 
 <p><img src="/images/blogPosts/2020-07-05-context-dependent-substitution-rates/Figure2.png" /></p>
 
@@ -244,7 +248,7 @@ Important developments happend between 2004 and now. Specifically, there was the
 
 <p><strong>Required Software</strong><br /></p>
 <ol>
-  <li>PhyloBayes MPI <sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup></li>
+  <li>PhyloBayes MPI <sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup></li>
   <li>parsePhyloBayes.jar (https://github.com/HuiJieLee/ParsePhyloBayes)</li>
   <li>Multidivtime (https://brcwebportal.cos.ncsu.edu/thorne/multidivtime.html)</li>
 </ol>
@@ -253,43 +257,43 @@ Important developments happend between 2004 and now. Specifically, there was the
 <ol>
   <li>A phylogenetic tree</li>
   <li>Aligned sequences</li>
-  <li>Example from mouse lemur <sup id="fnref:8:1"><a href="#fn:8" class="footnote">8</a></sup> provided <a href="https://github.com/gtiley/ResearchSupplements/tree/master/Campbell_et_al_2020_Mutation">here</a></li>
+  <li>Example from mouse lemur <sup id="fnref:8:1" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup> provided <a href="https://github.com/gtiley/ResearchSupplements/tree/master/Campbell_et_al_2020_Mutation">here</a></li>
 </ol>
 
 <h4 id="getting-usable-input-from-ensembls-epo-whole-genome-alignments">Getting usable input from Ensembl’s EPO whole-genome alignments</h4>
-<p>The Ensembl whole-genome alignments <sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup> are arguably better than something you could produce on your own. They are limiting in some sense that only well-annotated genomes hosted by Ensembl are available, but they have been used in previous studies of substitution rate variation <sup id="fnref:5:1"><a href="#fn:5" class="footnote">5</a></sup> so we will use them again here. The alignments have rich synteny information in them, but that makes them very not usable for our purposes. Here is how I retrieved the alignments and reformatted them.<br />
+<p>The Ensembl whole-genome alignments <sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup> are arguably better than something you could produce on your own. They are limiting in some sense that only well-annotated genomes hosted by Ensembl are available, but they have been used in previous studies of substitution rate variation <sup id="fnref:5:1" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> so we will use them again here. The alignments have rich synteny information in them, but that makes them very not usable for our purposes. Here is how I retrieved the alignments and reformatted them.<br />
 There might be slicker ways to retrieve data from Ensembl, but I prefer to simply go through the ftp site. Make sure you are downloading to an external drive or cluster because this will take a lot of space after decompressing.<br />
 On mac</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd 46_mammals.epo
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd 46_mammals.epo
 curl -O ftp://ftp.ensembl.org/pub/release-100/emf/ensembl-compara/multiple_alignments/49_mammals.epo/*.epo.gz
 </code></pre></div></div>
 <p>Or Linux</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd 46_mammals.epo
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd 46_mammals.epo
 wget ftp://ftp.ensembl.org/pub/release-100/emf/ensembl-compara/multiple_alignments/49_mammals.epo/*.epo.gz
 </code></pre></div></div>
 
-<p>Then decompress the epo files and extract with the ensembl’s <code class="highlighter-rouge">emf2maf.pl</code> script</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gunzip *.gz
+<p>Then decompress the epo files and extract with the ensembl’s <code class="language-plaintext highlighter-rouge">emf2maf.pl</code> script</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gunzip *.gz
 for i in *.emf
 {
     perl emf2maf.pl $i
 }
 </code></pre></div></div>
 <p>Go into the fasta directory, where we will get the maf formatted data (not sure what that is used for) into fasta format</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../fasta
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../fasta
 perl formatFasta.pl
 </code></pre></div></div>
-<p>Then, we want to restrict our analyses to putatively neutral sites. I chose to go about this by masking all coding regions and cpg islands in the alignments based on annotations from the human genome. The <code class="highlighter-rouge">distParts.pl</code> script is simply a driver for <code class="highlighter-rouge">maskFasta.subtype.pl</code>. Normally, I would use this to distribute jobs on a cluster because it can take a little while. The output includes the directory <code class="highlighter-rouge">noncoding</code> where both coding regions and cpg islands are replaced with Ns. The directory <code class="highlighter-rouge">noncpg</code> is the same as <code class="highlighter-rouge">noncoding</code>, but cpg islands are removed rather than masked. That is because sequences in cpg islands goes to the <code class="highlighter-rouge">cpg</code> directory. I have not actually used the output from <code class="highlighter-rouge">noncpg</code> or <code class="highlighter-rouge">cpg</code>, but it seemed useful at the time if we want to explore the effects of hypermethylation of cpg islands on substitution rates.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../neutralFasta
+<p>Then, we want to restrict our analyses to putatively neutral sites. I chose to go about this by masking all coding regions and cpg islands in the alignments based on annotations from the human genome. The <code class="language-plaintext highlighter-rouge">distParts.pl</code> script is simply a driver for <code class="language-plaintext highlighter-rouge">maskFasta.subtype.pl</code>. Normally, I would use this to distribute jobs on a cluster because it can take a little while. The output includes the directory <code class="language-plaintext highlighter-rouge">noncoding</code> where both coding regions and cpg islands are replaced with Ns. The directory <code class="language-plaintext highlighter-rouge">noncpg</code> is the same as <code class="language-plaintext highlighter-rouge">noncoding</code>, but cpg islands are removed rather than masked. That is because sequences in cpg islands goes to the <code class="language-plaintext highlighter-rouge">cpg</code> directory. I have not actually used the output from <code class="language-plaintext highlighter-rouge">noncpg</code> or <code class="language-plaintext highlighter-rouge">cpg</code>, but it seemed useful at the time if we want to explore the effects of hypermethylation of cpg islands on substitution rates.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../neutralFasta
 perl distParts.pl
 </code></pre></div></div>
 <p>Now, we just need to clean up a little after the masking and concatenate data for PhyloBayes. The masking generates a lot of columns that are only missing data, so I excise them here. The log and part file from concatenation give information about missing data and the partition boundaries for separate loci.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../sitePatternFasta/noncoding
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../sitePatternFasta/noncoding
 perl cleanAlignments.pl
 perl concatenateFastaFiles.pl Mmur.noncoding.fasta Mmur.noncoding.log Mmur.noncoding.part
 </code></pre></div></div>
-<p>We are almost ready to generate some samples of stochastic character mappings! But first, the whole-genome alignment is huge and this will never run for this analysis. Maybe some of the steps will be useful for other divergence time investigations? So, I sampled ten 1Mb chunks from the concatenated alignment. Then, we run phyloBayes <em>twice</em> for each alignment, check convergence, and generated stochastic character mappings. Both chains should be run simultaneously on different nodes. The <code class="highlighter-rouge">parsePhyloBayes.jar</code> program (the jar file needs to be included in the same directory as the stochastic mappings) estimates the substitution lengths <sup id="fnref:7:1"><a href="#fn:7" class="footnote">7</a></sup> and has a few arguments: 1000000 is the number of sites and 100 is the number of mappings. We use 100, which is low, because of the ludicrous amount of time needed for each step here. We were lucky to have 100 mappings after 2 weeks. That was after 2 months were dedicated towards the CAT-GTR runs. If I were to do this again, I would probably use shorter alignments or just treat each locus separately. Thus, keep in mind these analyses demand a lot of computation to get good posteriors. Otherwise, settle for smaller posteriors? You would get just as many mappings anyway, but actually observing convergence gives some confidence that there is information in the data.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../siteRates
+<p>We are almost ready to generate some samples of stochastic character mappings! But first, the whole-genome alignment is huge and this will never run for this analysis. Maybe some of the steps will be useful for other divergence time investigations? So, I sampled ten 1Mb chunks from the concatenated alignment. Then, we run phyloBayes <em>twice</em> for each alignment, check convergence, and generated stochastic character mappings. Both chains should be run simultaneously on different nodes. The <code class="language-plaintext highlighter-rouge">parsePhyloBayes.jar</code> program (the jar file needs to be included in the same directory as the stochastic mappings) estimates the substitution lengths <sup id="fnref:7:1" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup> and has a few arguments: 1000000 is the number of sites and 100 is the number of mappings. We use 100, which is low, because of the ludicrous amount of time needed for each step here. We were lucky to have 100 mappings after 2 weeks. That was after 2 months were dedicated towards the CAT-GTR runs. If I were to do this again, I would probably use shorter alignments or just treat each locus separately. Thus, keep in mind these analyses demand a lot of computation to get good posteriors. Otherwise, settle for smaller posteriors? You would get just as many mappings anyway, but actually observing convergence gives some confidence that there is information in the data.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../siteRates
 perl sampleNonCoding.pl
 mpirun -np 16 pb_mpi -gtr -cat -dgam 4 -x 5 1200 -d mn.0.phy -T 7tax.tre pb01
 mpirun -np 16 pb_mpi -gtr -cat -dgam 4 -x 5 1200 -d mn.0.phy -T 7tax.tre pb02
@@ -300,9 +304,9 @@ mv o.estb.* ../divtime/0.0
 java -jar parsePhyloBayes.jar 1000000 100 pb02 2 outgroup.txt
 mv o.estb.* ../divtime/0.1
 </code></pre></div></div>
-<p>The java step will have generated some input files for multidivtime - o.estb.group* files. We moved these into separate folders for multidivtime ananlyses. The fossil calibrations are justified in Campbell et al. (2020) <sup id="fnref:8:2"><a href="#fn:8" class="footnote">8</a></sup> and the input trees required a slight modification. We can reformat output for Tracer, and generate some plots.</p>
+<p>The java step will have generated some input files for multidivtime - o.estb.group* files. We moved these into separate folders for multidivtime ananlyses. The fossil calibrations are justified in Campbell et al. (2020) <sup id="fnref:8:2" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup> and the input trees required a slight modification. We can reformat output for Tracer, and generate some plots.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../divtime/0.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../divtime/0.0
 multidivtime multicntrl.dat &gt; 0.0.stdout
 cd ../divtime/0.1
 multidivtime multicntrl.dat &gt; 0.1.stdout
@@ -313,37 +317,37 @@ R CMD BATCH PosteriorPlots.R
 
 <p>Of course any of your own analyses would require heavy editing to the plotting script and justifying options in the control file. This should give a rough guide to the steps for analyzing context-dependent substitution rates though.</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>Thorne JL, Kishino H, Painter IS. 1998. Estimating the rate of evolution of the ate of molecular evolution. <em>Mol Biol Evol</em> 15:1647-1657. <a href="#fnref:1" class="reversefootnote">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>Thorne JL, Kishino H, Painter IS. 1998. Estimating the rate of evolution of the ate of molecular evolution. <em>Mol Biol Evol</em> 15:1647-1657. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
     </li>
-    <li id="fn:2">
-      <p>Siepel A, Haussler D. 2004. Phylogenetic estimation of context-dependent substitution rates by maximum likelihood. <em>Mol Biol Evol</em> 21:468-488. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>Siepel A, Haussler D. 2004. Phylogenetic estimation of context-dependent substitution rates by maximum likelihood. <em>Mol Biol Evol</em> 21:468-488. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>Hwang DG, Green P. 2004. Bayesian Markov chain Monte Carlo sequence analysis reveals varying neutral substitution patterns in mammalian evolution. <em>Proc Natl Acad Sci USA</em> 101:13994-14001. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>Hwang DG, Green P. 2004. Bayesian Markov chain Monte Carlo sequence analysis reveals varying neutral substitution patterns in mammalian evolution. <em>Proc Natl Acad Sci USA</em> 101:13994-14001. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>Kim S-H, Elango N, Warden C, Vigoda E, Yi SV. 2006. Heterogeneous genomic molecular clocks in primates. <em>PLoS Genet</em> 2:e163. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>Kim S-H, Elango N, Warden C, Vigoda E, Yi SV. 2006. Heterogeneous genomic molecular clocks in primates. <em>PLoS Genet</em> 2:e163. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>Moorjani P, Amorim CEG, Arndt PF, Prezworski M. 2016. Variation in the molecular clock of primates. <em>Proc Natl Acad Sci USA</em> 113:10607-10612. <a href="#fnref:5" class="reversefootnote">&#8617;</a> <a href="#fnref:5:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>Moorjani P, Amorim CEG, Arndt PF, Prezworski M. 2016. Variation in the molecular clock of primates. <em>Proc Natl Acad Sci USA</em> 113:10607-10612. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:5:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
     </li>
-    <li id="fn:6">
-      <p>Lartillot N, Philippe H. 2004. Bayesian phylogenetic software based on mixture models. <em>Mol Biol Evol</em> 21:1095-1109. <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>Lartillot N, Philippe H. 2004. Bayesian phylogenetic software based on mixture models. <em>Mol Biol Evol</em> 21:1095-1109. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>Lee H-J, Rodrigue N, Thorne JL. 2015. Relaxing the molecular clock to different degrees for different substitution types. <em>Mol Biol Evol</em> 32:1948-1961. <a href="#fnref:7" class="reversefootnote">&#8617;</a> <a href="#fnref:7:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>Lee H-J, Rodrigue N, Thorne JL. 2015. Relaxing the molecular clock to different degrees for different substitution types. <em>Mol Biol Evol</em> 32:1948-1961. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:7:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
     </li>
-    <li id="fn:8">
-      <p>Campbell CR, Tiley GP, Poelstra JW, Hunnicutt KE, Larsen PA, Lee H-J, Thorne JL, dos Reis M, Yoder AD. 2020. Pedigree-based measurement of the <em>de novo</em> mutation rate in the gray mouse lemur reveals a high mutation rate, few mutations in CpG sites, and a weak sex bias. <em>bioRxiv</em> doi: http://doi.org/10.1101/724880. <a href="#fnref:8" class="reversefootnote">&#8617;</a> <a href="#fnref:8:1" class="reversefootnote">&#8617;<sup>2</sup></a> <a href="#fnref:8:2" class="reversefootnote">&#8617;<sup>3</sup></a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>Campbell CR, Tiley GP, Poelstra JW, Hunnicutt KE, Larsen PA, Lee H-J, Thorne JL, dos Reis M, Yoder AD. 2020. Pedigree-based measurement of the <em>de novo</em> mutation rate in the gray mouse lemur reveals a high mutation rate, few mutations in CpG sites, and a weak sex bias. <em>bioRxiv</em> doi: http://doi.org/10.1101/724880. <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:8:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:8:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
     </li>
-    <li id="fn:9">
-      <p>Lartillot M, Rodrigue N, Stubbs D, Richer J. 2013. PhyloBayes MPI: phylogenetic reconstruction with infinite mixtures of profiles in a parallel environment. <em>Syst Biol</em> 62:611-615. <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>Lartillot M, Rodrigue N, Stubbs D, Richer J. 2013. PhyloBayes MPI: phylogenetic reconstruction with infinite mixtures of profiles in a parallel environment. <em>Syst Biol</em> 62:611-615. <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:10">
-      <p>http://useast.ensembl.org/info/genome/compara/multiple_genome_alignments.html <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:10" role="doc-endnote">
+      <p>http://useast.ensembl.org/info/genome/compara/multiple_genome_alignments.html <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -361,7 +365,7 @@ R CMD BATCH PosteriorPlots.R
 	<footer class="footer">
 
 	<div class="footer__copyright">
-		<span>© 2021 George Tiley</span>
+		<span>© 2022 George Tiley</span>
 		<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
 	</div>
 

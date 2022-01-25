@@ -22,21 +22,18 @@
 	<link rel="shortcut icon" href="/images/flavicon.png">
 	<title>Software – George Tiley</title>
 	<meta name="description" content="<h3 id="mixture-models-for-detecting-whole-genome-duplications">Mixture models for detecting whole-genome duplications</h3>
-
 ">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Software – George Tiley">
 	<meta name="twitter:description" content="<h3 id="mixture-models-for-detecting-whole-genome-duplications">Mixture models for detecting whole-genome duplications</h3>
-
 ">
 	<meta name="twitter:image:src" content="http://localhost:4000/images/staticContent/IMG_1717.JPG">
 
 	<!-- Facebook OpenGraph -->
 	<meta property="og:title" content="Software – George Tiley" />
 	<meta property="og:description" content="<h3 id="mixture-models-for-detecting-whole-genome-duplications">Mixture models for detecting whole-genome duplications</h3>
-
 " />
 	<meta property="og:image" content="http://localhost:4000/images/staticContent/IMG_1717.JPG" />
 
@@ -108,7 +105,7 @@
 					</li>
 					
 					<li class="menu__list__item">
-						<a href="/about" class="menu__list__item__link">About</a>
+						<a href="/madgrass" class="menu__list__item__link">MADGRASS</a>
 					</li>
 					
 					<li class="menu__list__item">
@@ -117,6 +114,10 @@
 					
 					<li class="menu__list__item">
 						<a href="/software" class="menu__list__item__link">Software</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/teaching" class="menu__list__item__link">Teaching</a>
 					</li>
 					
 					<li class="menu__list__item">
@@ -207,7 +208,7 @@
 	<div class="wrap">
 
 		<h1>Software</h1>
-		<p>I sometimes do marginally useful things in Perl, R, and C</p>
+		<p></p>
 
 	</div>
 
@@ -221,7 +222,7 @@
 
 <p>I have implemented some <a href="https://github.com/gtiley/Ks_plots">mixture models in R</a> that might be useful for detecting ancient whole-genome duplications from genomic or transcriptomic data<br /></p>
 
-<p>I never made this into a proper R package on CRAN because I do not think the code is that novel - it is mostly repackaging pre-existing algorithms to implement some slightly different models. The code has no dependencies, so it is easy enough to run. Models can be used to analyze any data for that matter, it does not have to be limited to the task of detecting whole-genome duplications.<br /></p>
+<p>I never made this into a proper R package on CRAN because I do not think the code is that novel - it is mostly repackaging pre-existing algorithms to implement some slightly different models. The code has no dependencies, so it is easy enough to run with a <em>source</em> call. Models can be used to analyze any data for that matter, it does not have to be limited to the task of detecting whole-genome duplications.<br /></p>
 
 <h3 id="testing-phylogenetic-hypotheses-of-ancient-whole-genome-duplications">Testing phylogenetic hypotheses of ancient whole-genome duplications</h3>
 
@@ -234,6 +235,10 @@
 <p>Collaborators and I have implemented a <a href="https://github.com/gtiley/Phasing">pipeline for phasing sequence data from polyploids</a>.<br /></p>
 
 <p>This is still under development but is capable of giving users analysis-ready output and hopefully avoids a number of bioinformatic headaches for biologists.<br /></p>
+
+<h3 id="simulations-under-the-multispecies-coalescent-with-introgression">Simulations under the multispecies coalescent with introgression</h3>
+
+<p>It took a while for me to find a way to simulate data that allows for genealogical discordance under the MSC and introgression. BPP does this very well and here are some <a href="https://github.com/gtiley/bpp_simulationTools">scripts</a> that might be helpful for others. I found BPP to be much more intuitive than ms, but ms or fastsimcoal2 might be more appropriate to simulate under infinite sites for population genomics.</p>
 
 
 	</div>
@@ -248,7 +253,7 @@
 	<footer class="footer">
 
 	<div class="footer__copyright">
-		<span>© 2021 George Tiley</span>
+		<span>© 2022 George Tiley</span>
 		<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
 	</div>
 

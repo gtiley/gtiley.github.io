@@ -102,7 +102,7 @@
 					</li>
 					
 					<li class="menu__list__item">
-						<a href="/about" class="menu__list__item__link">About</a>
+						<a href="/madgrass" class="menu__list__item__link">MADGRASS</a>
 					</li>
 					
 					<li class="menu__list__item">
@@ -111,6 +111,10 @@
 					
 					<li class="menu__list__item">
 						<a href="/software" class="menu__list__item__link">Software</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/teaching" class="menu__list__item__link">Teaching</a>
 					</li>
 					
 					<li class="menu__list__item">
@@ -201,7 +205,7 @@
 	<div class="wrap">
 
 		<h1>Phased Haplotype Sequences from Polyploids</h1>
-		<p>11 June 2021</p>
+		<p>12 June 2021</p>
 
 	</div>
 
@@ -213,14 +217,14 @@
 
 		<h3 id="why-should-data-be-phased">Why should data be phased?</h3>
 
-<p>I originally became interested in phasing sequence data for polyploids when I was learning about genotyping for accurate estimation of site frequency spectra for various grass species in Madagascar. At the same time, I was applying the MSci model <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> for divergence time estimation with introgression for the mouse lemur work, and it seemed like phasing data would be a good strategy for enabling easier analyses of polyploids with network models. I was recently involved in some generation and analysis of target enrichment data <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>, so that seemed like a good place to start seeing as these data are arguably more accessible than other types of genomic data.<br />
-Honestly, I needed to convince myself that phasing actually mattered for improving analyses of polyploids, specifically allopolyploids. There were a few empirical examples that seemed important <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>, but the methods were not easily scalable for many individuals. So I first started with some simulations under a simple scenario with a single allopolyploid (Fig. 1). Simulations were done under the MSC with very simple assumptions about rate variation, pop sizes, and the substitution model.<br /></p>
+<p>I originally became interested in phasing sequence data for polyploids when I was learning about genotyping for accurate estimation of site frequency spectra for various grass species in Madagascar. At the same time, I was applying the MSci model <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> for divergence time estimation with introgression for the mouse lemur work, and it seemed like phasing data would be a good strategy for enabling easier analyses of polyploids with network models. I was recently involved in some generation and analysis of target enrichment data <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, so that seemed like a good place to start seeing as these data are arguably more accessible than other types of genomic data.<br />
+Honestly, I needed to convince myself that phasing actually mattered for improving analyses of polyploids, specifically allopolyploids. There were a few empirical examples that seemed important <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>, but the methods were not easily scalable for many individuals. So I first started with some simulations under a simple scenario with a single allopolyploid (Fig. 1). Simulations were done under the MSC with very simple assumptions about rate variation, pop sizes, and the substitution model.<br /></p>
 
 <p><img src="/images/blogPosts/2021-06-12-Phasing-Polyploids/Fig2.png" /></p>
 
 <p><strong>Fig. 1 — Species network used for simulation.</strong> The divergence times in expected substitutions per site are given for each node, and h is the hybrid node where two alleles enter from both t and v. E is an allotetraploid while other species are diploid. Nucleotide divergence was reduced by dividing all τ by 10 or increased by multiplying all τ by 10. ILS was increased by halving the distance between τ_h and τ_u and between τ_u and τ_s either once (for the low ILS condition) or twice (for the moderate ILS condition).<br /></p>
 
-<p>Networks were then estimated using a topology-based pseudolikelihood approach with PhyloNetworks <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>. The results were motivating enough that phasing should be useful for investigating at least allopolyploids. Five different input data sets were prepared for the analysis:<br /></p>
+<p>Networks were then estimated using a topology-based pseudolikelihood approach with PhyloNetworks <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>. The results were motivating enough that phasing should be useful for investigating at least allopolyploids. Five different input data sets were prepared for the analysis:<br /></p>
 <ol>
   <li>True - the known simulated gene trees</li>
   <li>Phased - gene trees estimated from the true haplotype data</li>
@@ -236,7 +240,7 @@ The phased data greatly outperformed haploype consensus data and genotype data f
 
 <h3 id="a-fast-and-scalable-phasing-strategy">A fast and scalable phasing strategy</h3>
 
-<p>Along with my coauthor Andy Crowl, we developed a pipeline (Fig. 3) called PATÉ (Phased Alleles from Target Enrichment data). The core of PATÉ is H-PoPG <sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>. Currently, <em>de novo</em> haplotype consensus assemblies are used at a reference for each individual. Reads are then realigned to loci for genotyping and those genotypes go through some filtering. H-PoPG is then used to phase those variants passing filters, and phased fasta files are output for analysis. I think this is a good strategy for analyses of multiple species where there is no single reference genome, but some power is lost compared to joint genotyping if you have a reference genome and are more interested in population genomics.<br /></p>
+<p>Along with my coauthor Andy Crowl, we developed a pipeline (Fig. 3) called PATÉ (Phased Alleles from Target Enrichment data). The core of PATÉ is H-PoPG <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>. Currently, <em>de novo</em> haplotype consensus assemblies are used at a reference for each individual. Reads are then realigned to loci for genotyping and those genotypes go through some filtering. H-PoPG is then used to phase those variants passing filters, and phased fasta files are output for analysis. I think this is a good strategy for analyses of multiple species where there is no single reference genome, but some power is lost compared to joint genotyping if you have a reference genome and are more interested in population genomics.<br /></p>
 
 <p><img src="/images/blogPosts/2021-06-12-Phasing-Polyploids/Fig3.png" /></p>
 
@@ -244,7 +248,7 @@ The phased data greatly outperformed haploype consensus data and genotype data f
 
 <p>What I like most about PATÉ is that were are able to be rigorous about genotype quality while also being fast. And because we operate on individuals, the genotyping and phasing can be distributed easily on a cluster to scale to many individuals as is typical of contemporary phylogenomics projects.<br /></p>
 
-<p>We have analyzed several empirical data sets to-date using PATÉ, but the one from the <a href="https://www.biorxiv.org/content/10.1101/2021.05.04.442457v1">preprint</a> are <em>Dryopteris</em> ferns <sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>. We chose this group because the parents for the allopolyploids are assumed known and because the system is actually quite complex. We do a number of analyses covered in the preprint that suggest the phased data is important for network estimation, especially when there are multiple introgression events involved. Some good news is that when scenarios are relatively simple (i.e. two parents and their allopolyploid), both phased and the haplotype consensus data can do well (Fig. 4). Perhaps alarmingly though, the haplotype consensus data can get the direction of introgression wrong at an alarming rate when there are too few loci.<br /></p>
+<p>We have analyzed several empirical data sets to-date using PATÉ, but the one from the <a href="https://www.biorxiv.org/content/10.1101/2021.05.04.442457v1">preprint</a> are <em>Dryopteris</em> ferns <sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>. We chose this group because the parents for the allopolyploids are assumed known and because the system is actually quite complex. We do a number of analyses covered in the preprint that suggest the phased data is important for network estimation, especially when there are multiple introgression events involved. Some good news is that when scenarios are relatively simple (i.e. two parents and their allopolyploid), both phased and the haplotype consensus data can do well (Fig. 4). Perhaps alarmingly though, the haplotype consensus data can get the direction of introgression wrong at an alarming rate when there are too few loci.<br /></p>
 
 <p><img src="/images/blogPosts/2021-06-12-Phasing-Polyploids/Fig8.png" /></p>
 
@@ -256,28 +260,28 @@ The phased data greatly outperformed haploype consensus data and genotype data f
 
 <p>Currently, I suggest reading the <a href="https://www.biorxiv.org/content/10.1101/2021.05.04.442457v1">preprint</a> and following the instructions on <a href="https://github.com/gtiley/Phasing">GitHub</a>. A more complete tutorial is in the works but should be up in the coming months.<br /></p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>Flouri T, Jiao X, Rannala B, Yang Z. 2020. A Bayesian Implementation of the Multispecies Coalescent Model with Introgression for Phylogenomic Analysis. <strong>Mol. Biol. Evol.</strong> 37:1211-1223. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>Flouri T, Jiao X, Rannala B, Yang Z. 2020. A Bayesian Implementation of the Multispecies Coalescent Model with Introgression for Phylogenomic Analysis. <strong>Mol. Biol. Evol.</strong> 37:1211-1223. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>Breinholt JW, Carey SB, Tiley GP, Davis EC, Endara L, McDaniel SF, Neves LG, Sessa EB, et al. 2021. A target enrichment probe set for resolving the flagellate plant tree of life. <strong>Appl. Plant Sci.</strong> 9:e11406. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>Breinholt JW, Carey SB, Tiley GP, Davis EC, Endara L, McDaniel SF, Neves LG, Sessa EB, et al. 2021. A target enrichment probe set for resolving the flagellate plant tree of life. <strong>Appl. Plant Sci.</strong> 9:e11406. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>Oberprieler C, Wagner F, Tomasello S, Konowalik K. 2017. A permutation approach for inferring species networks from gene trees in polyploid complexes by minimising deep coalescences. <strong>Methods in Ecology and Evolution</strong> 8:835-849. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>Oberprieler C, Wagner F, Tomasello S, Konowalik K. 2017. A permutation approach for inferring species networks from gene trees in polyploid complexes by minimising deep coalescences. <strong>Methods in Ecology and Evolution</strong> 8:835-849. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>Eriksson JS, de Sousa F, Bertrand YJK, Antonelli A, Oxelman B, Pfeil BE. 2018. Allele phasing is critical to revealing a shared allopolyploid origin of Medicago arborea and M. strasseri (Fabaceae). <strong>BMC Evol. Biol.</strong> 18:9. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>Eriksson JS, de Sousa F, Bertrand YJK, Antonelli A, Oxelman B, Pfeil BE. 2018. Allele phasing is critical to revealing a shared allopolyploid origin of Medicago arborea and M. strasseri (Fabaceae). <strong>BMC Evol. Biol.</strong> 18:9. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>Solis-Lemus C, Bastide P, Ané C. 2017. PhyloNetworks: A Package for Phylogenetic Networks. <strong>Mol. Biol. Evol.</strong> 34:3292-3298. <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>Solis-Lemus C, Bastide P, Ané C. 2017. PhyloNetworks: A Package for Phylogenetic Networks. <strong>Mol. Biol. Evol.</strong> 34:3292-3298. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>Xie M, Wu Q, Wang J, Jiang T 2016. H-PoP and H-PoPG: heuristic partitioning algorithms for single individual haplotyping of polyploids. Bioinformatics 32:3735-3744. <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>Xie M, Wu Q, Wang J, Jiang T 2016. H-PoP and H-PoPG: heuristic partitioning algorithms for single individual haplotyping of polyploids. Bioinformatics 32:3735-3744. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>Sessa EB, Zimmer EA, Givnish TJ. 2012. Unraveling reticulate evolution in North American Dryopteris (Dryopteridaceae). BMC. Evol. Biol. 12:104. <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>Sessa EB, Zimmer EA, Givnish TJ. 2012. Unraveling reticulate evolution in North American Dryopteris (Dryopteridaceae). BMC. Evol. Biol. 12:104. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -295,7 +299,7 @@ The phased data greatly outperformed haploype consensus data and genotype data f
 	<footer class="footer">
 
 	<div class="footer__copyright">
-		<span>© 2021 George Tiley</span>
+		<span>© 2022 George Tiley</span>
 		<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
 	</div>
 
